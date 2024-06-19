@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from pymongo import MongoClient
 
-def list_all(mongo_collection):
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     """
     Lists all docs in a PyMongo collection.
 
@@ -11,10 +11,9 @@ def list_all(mongo_collection):
     Returns:
     list: A list of all docs in the collection. Returns an empty list if no docs are found.
     """
-    db = client["mydb"]list_all
+db = myclient["mydb"]
+dbs = db["mongo_collection"]
 
-    dbs  = db["mongo_collection"]
-
-    for doc in dbs.find()
+for doc in dbs.find():
     print(doc)
 
