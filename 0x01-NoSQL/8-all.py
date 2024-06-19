@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from pymongo.cursor import CursorType
+from pymongo import MongoClient
 
-def list_all(mongo_collection: pymongo.collection.Collection) -> list:
+def list_all(mongo_collection):
     """
     Lists all docs in a PyMongo collection.
 
@@ -11,9 +11,10 @@ def list_all(mongo_collection: pymongo.collection.Collection) -> list:
     Returns:
     list: A list of all docs in the collection. Returns an empty list if no docs are found.
     """
-    docs = []
-    cursor = mongo_collection.find(filter=None, projection=None, cursor_type=CursorType.EXHAUST)
-    for doc in cursor:
-        docs.append(doc)
-    return docs
+    db = client["mydb"]list_all
+
+    dbs  = db["mongo_collection"]
+
+    for doc in dbs.find()
+    print(doc)
 
